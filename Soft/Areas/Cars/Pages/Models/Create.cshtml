@@ -1,0 +1,17 @@
+﻿@page
+@using Loppprojekt.Pages.Extensions
+@model Loppprojekt.Soft.Areas.Cars.Pages.Models.CreateModel
+
+@{
+    Layout = "_Create";
+}
+
+    <body>
+        @Html.EditControlsFor(m => m.Item.Id)
+        @Html.EditControlsForDropDown(m => m.Item.MakeId, Model.Makes)
+        @Html.EditControlsFor(m => m.Item.Code)
+        @Html.EditControlsFor(m => m.Item.Name)
+        @Html.EditControlsFor(m => m.Item.Definition)
+        @Html.EditControlsFor(m => m.Item.ValidFrom)
+        @Html.EditControlsFor(m => m.Item.ValidTo)
+    </body>

@@ -1,0 +1,16 @@
+﻿@page
+@using Loppprojekt.Pages.Extensions
+@model Loppprojekt.Soft.Areas.Cars.Pages.Makes.EditModel
+
+@{
+    Layout = "_Edit";
+}
+
+<body>
+<input type="hidden" asp-for="Item.Id"/>
+@Html.EditControlsFor(m => m.Item.Code)
+@Html.EditControlsFor(m => m.Item.Name)
+@Html.EditControlsFor(m => m.Item.Definition)
+@Html.EditControlsFor(m => m.Item.ValidFrom)
+@Html.EditControlsFor(m => m.Item.ValidTo)
+</body>
