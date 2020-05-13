@@ -6,9 +6,6 @@ namespace Loppprojekt.Infra.Cars
 {
     public static class CarsDbInitializer
     {
-
-        
-
         private static ModelData createModelData(string makeId, string id, string name = null, string code = null)
         {
             return new ModelData
