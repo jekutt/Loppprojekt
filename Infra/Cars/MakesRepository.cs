@@ -9,6 +9,6 @@ namespace Loppprojekt.Infra.Cars
         public MakesRepository(CarsDbContext c) : base(c, c.Makes) { }
 
         protected internal override Make toDomainObjects(MakeData d) => new Make(d);
-
+        
     }
 }

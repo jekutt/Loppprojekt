@@ -15,9 +15,7 @@ namespace Loppprojekt.Infra.Common
         public string SortOrder { get; set; }
         public string DescendingString => "_desc";
 
-        protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s)
-        {
-        }
+        protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
         protected internal override IQueryable<TData> createSqlQuery()
         {
@@ -30,7 +28,6 @@ namespace Loppprojekt.Infra.Common
         protected internal IQueryable<TData> addSorting(IQueryable<TData> query)
         {
             var expression = createExpression();
-
             var r = expression is null ? query : addOrderBy(query, expression);
 
             return r;
@@ -39,8 +36,7 @@ namespace Loppprojekt.Infra.Common
         internal Expression<Func<TData, object>> createExpression()
         {
             var property = findProperty();
-            if (property is null) return null;
-            return lambdaExpression(property);
+            return property is null ? null : lambdaExpression(property);
         }
 
         internal Expression<Func<TData, object>> lambdaExpression(PropertyInfo p)
@@ -69,14 +65,8 @@ namespace Loppprojekt.Infra.Common
        {
            if (query is null) return null;
            if (e is null) return query;
-           try
-           {
-               return isDescending() ? query.OrderByDescending(e) : query.OrderBy(e);
-           }
-           catch
-           {
-               return query;
-           }
+           try { return isDescending() ? query.OrderByDescending(e) : query.OrderBy(e); }
+           catch { return query; }
        }
 
        internal bool isDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);

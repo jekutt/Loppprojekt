@@ -15,9 +15,7 @@ namespace Loppprojekt.Infra.Common
         public string FixedFilter { get; set; }
         public string FixedValue { get; set; }
 
-        protected FilteredRepository(DbContext c, DbSet<TData> s) : base(c, s)
-        {
-        }
+        protected FilteredRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
         protected internal override IQueryable<TData> createSqlQuery()
         {
@@ -36,8 +34,8 @@ namespace Loppprojekt.Infra.Common
 
         private Expression<Func<TData, bool>> createFixedWhereExpression()
         {
-            if (FixedFilter is null) return null;
-            if (FixedValue is null) return null;
+            if (string.IsNullOrWhiteSpace(FixedValue)) return null;
+            if (string.IsNullOrWhiteSpace(FixedFilter)) return null;
             var param = Expression.Parameter(typeof(TData), "s");
 
             var p = typeof(TData).GetProperty(FixedFilter);
@@ -56,12 +54,13 @@ namespace Loppprojekt.Infra.Common
         {
             if (string.IsNullOrEmpty(SearchString)) return query;
             var expression = createWhereExpression();
-        
-            return query.Where(expression);
+
+            return expression is null ? query : query.Where(expression);
         }
 
         internal Expression<Func<TData, bool>> createWhereExpression()
         {
+            if (string.IsNullOrWhiteSpace(SearchString)) return null;
             var param = Expression.Parameter(typeof(TData), "s");
 
             Expression predicate = null;
