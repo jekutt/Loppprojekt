@@ -23,6 +23,9 @@ namespace Loppprojekt.Soft.Migrations
                 b.Property<string>("Id")
                     .HasColumnType("nvarchar(450)");
 
+                b.Property<string>("Country")
+                    .HasColumnType("nvarchar(max)");
+
                 b.Property<string>("Code")
                     .HasColumnType("nvarchar(max)");
 
@@ -48,6 +51,9 @@ namespace Loppprojekt.Soft.Migrations
                 b.Property<string>("Id")
                     .HasColumnType("nvarchar(450)");
 
+                b.Property<string>("Country")
+                    .HasColumnType("nvarchar(max)");
+
                 b.Property<string>("Code")
                     .HasColumnType("nvarchar(max)");
 
@@ -72,6 +78,9 @@ namespace Loppprojekt.Soft.Migrations
             {
                 b.Property<string>("Id")
                     .HasColumnType("nvarchar(450)");
+
+                b.Property<string>("Country")
+                    .HasColumnType("nvarchar(max)");
 
                 b.Property<string>("Code")
                     .HasColumnType("nvarchar(max)");

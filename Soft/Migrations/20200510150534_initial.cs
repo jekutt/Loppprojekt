@@ -61,6 +61,52 @@ namespace Loppprojekt.Soft.Migrations
                 {
                     table.PrimaryKey("PK_Makes", x => x.Id);
                 });
+            migrationBuilder.CreateTable(
+                name: "ModelFactors",
+                columns: table => new
+                {
+                    ModelId = table.Column<string>(nullable: false),
+                    SystemOfModelsId = table.Column<string>(nullable: false),
+                    Factor = table.Column<float>(nullable: true),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ModelFactors", x => x.ModelId);
+                    table.PrimaryKey("PK_ModelFactors", x => x.SystemOfModelsId);
+                });
+            migrationBuilder.CreateTable(
+                name: "Models",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
+                    Definition = table.Column<string>(nullable: true),
+                    MakeId = table.Column<string>(nullable: true),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Models", x => x.Id);
+                });
+            migrationBuilder.CreateTable(
+                name: "SystemsOfModels",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
+                    Definition = table.Column<string>(nullable: true),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SystemsOfModels", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",

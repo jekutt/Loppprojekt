@@ -6,5 +6,6 @@ namespace Loppprojekt.Domain.Common
     {
         protected internal Entity(TData d = null) => Data = d ?? new TData();
         public TData Data { get; set; }
+
     }
 }
