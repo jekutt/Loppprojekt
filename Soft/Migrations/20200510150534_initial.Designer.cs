@@ -46,6 +46,81 @@ namespace Loppprojekt.Soft.Migrations
                 b.ToTable("Makes");
             });
 
+            modelBuilder.Entity("Data.Cars.SystemOfModelsData", b =>
+            {
+                b.Property<string>("Id")
+                    .HasColumnType("nvarchar(450)");
+
+                b.Property<string>("Code")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Definition")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Name")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<DateTime?>("ValidFrom")
+                    .HasColumnType("datetime2");
+
+                b.Property<DateTime?>("ValidTo")
+                    .HasColumnType("datetime2");
+
+                b.HasKey("Id");
+
+                b.ToTable("SystemsOfModels");
+            });
+
+            modelBuilder.Entity("Data.Cars.ModelData", b =>
+            {
+                b.Property<string>("Id")
+                    .HasColumnType("nvarchar(450)");
+
+                b.Property<string>("Code")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Definition")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("MakeId")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Name")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<DateTime?>("ValidFrom")
+                    .HasColumnType("datetime2");
+
+                b.Property<DateTime?>("ValidTo")
+                    .HasColumnType("datetime2");
+
+                b.HasKey("Id");
+
+                b.ToTable("Models");
+            });
+
+            modelBuilder.Entity("Data.Cars.ModelFactorData", b =>
+            {
+                b.Property<string>("SystemOfModelsId")
+                    .HasColumnType("nvarchar(450)");
+
+                b.Property<string>("ModelId")
+                    .HasColumnType("nvarchar(450)");
+
+                b.Property<double>("Factor")
+                    .HasColumnType("float");
+
+                b.Property<DateTime?>("ValidFrom")
+                    .HasColumnType("datetime2");
+
+                b.Property<DateTime?>("ValidTo")
+                    .HasColumnType("datetime2");
+
+                b.HasKey("SystemOfModelsId", "ModelId");
+
+                b.ToTable("ModelFactors");
+            });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")

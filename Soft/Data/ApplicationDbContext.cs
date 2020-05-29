@@ -10,9 +10,15 @@ namespace Loppprojekt.Soft.Data
             : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            initializeTables(builder);
+        }
+
+        internal void initializeTables(ModelBuilder builder)
+        {
             CarsDbContext.InitializeTables(builder);
         }
     }

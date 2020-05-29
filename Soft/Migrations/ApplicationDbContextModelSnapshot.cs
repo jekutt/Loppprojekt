@@ -23,9 +23,6 @@ namespace Loppprojekt.Soft.Migrations
                 b.Property<string>("Id")
                     .HasColumnType("nvarchar(450)");
 
-                b.Property<string>("Country")
-                    .HasColumnType("nvarchar(max)");
-
                 b.Property<string>("Code")
                     .HasColumnType("nvarchar(max)");
 
@@ -50,9 +47,6 @@ namespace Loppprojekt.Soft.Migrations
             {
                 b.Property<string>("Id")
                     .HasColumnType("nvarchar(450)");
-
-                b.Property<string>("Country")
-                    .HasColumnType("nvarchar(max)");
 
                 b.Property<string>("Code")
                     .HasColumnType("nvarchar(max)");
@@ -79,9 +73,6 @@ namespace Loppprojekt.Soft.Migrations
                 b.Property<string>("Id")
                     .HasColumnType("nvarchar(450)");
 
-                b.Property<string>("Country")
-                    .HasColumnType("nvarchar(max)");
-
                 b.Property<string>("Code")
                     .HasColumnType("nvarchar(max)");
 
@@ -107,10 +98,10 @@ namespace Loppprojekt.Soft.Migrations
 
             modelBuilder.Entity("Loppprojekt.Data.Cars.ModelFactorData", b =>
             {
-                b.Property<string>("ModelId")
+                b.Property<string>("SystemOfModelsId")
                     .HasColumnType("nvarchar(450)");
 
-                b.Property<string>("SystemOfModelsId")
+                b.Property<string>("ModelId")
                     .HasColumnType("nvarchar(450)");
 
                 b.Property<double>("Factor")
@@ -122,7 +113,7 @@ namespace Loppprojekt.Soft.Migrations
                 b.Property<DateTime?>("ValidTo")
                     .HasColumnType("datetime2");
 
-                b.HasKey("ModelId", "SystemOfModelsId");
+                b.HasKey("SystemOfModelsId", "ModelId");
 
                 b.ToTable("ModelFactors");
             });
