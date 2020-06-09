@@ -1,0 +1,24 @@
+﻿@page
+@using Loppprojekt.Aids.Reflection
+@using Loppprojekt.Pages.Extensions
+@using Loppprojekt.Data.Cars
+@model Loppprojekt.Soft.Areas.Cars.Pages.Marks.DetailsModel
+
+@{
+    Layout = "_Details";
+    const string models = "/Cars/Models";
+    var markId = GetMember.Name<ModelData>(x => x.MarkId);
+}
+
+    <body>
+        @Html.DisplayControlsFor(m => m.Item.Name)
+        @Html.DisplayControlsFor(m => m.Item.Country)
+        @Html.DisplayControlsFor(m => m.Item.Description)
+        @Html.DisplayControlsFor(m => m.Item.YearOfManufacture)
+    </body>
+
+@section Details
+{
+    @Html.HypertextLinkFor(string.Empty, new Link("Show models",
+        $"{models}/Index?fixedFilter={markId}&fixedValue={Model.Item.Name}"))
+}

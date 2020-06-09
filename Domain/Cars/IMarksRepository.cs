@@ -2,5 +2,5 @@
 
 namespace Loppprojekt.Domain.Cars
 {
-    public interface IMakesRepository : IRepository<Make> { }
+    public interface IMarksRepository : IRepository<Mark> { }
 }

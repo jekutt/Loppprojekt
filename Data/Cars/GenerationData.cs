@@ -2,8 +2,9 @@
 
 namespace Loppprojekt.Data.Cars
 {
-    public sealed class ModelData : DefinedEntityData
+    public sealed class GenerationData : DefinedEntityData
     {
         public string MarkId { get; set; }
+        public string ModelsId { get; set; }
     }
 }

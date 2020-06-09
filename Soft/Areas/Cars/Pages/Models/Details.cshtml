@@ -7,11 +7,10 @@
 }
 
     <body>
-        @Html.DisplayControlsFor(m => m.Item.MakeId, Model.GetMakeName(Model.Item.MakeId))
-        @Html.DisplayControlsFor(m => m.Item.Code)
+        @Html.DisplayControlsFor(m => m.Item.MarkId, Model.GetMarkName(Model.Item.MarkId))
         @Html.DisplayControlsFor(m => m.Item.Name)
-        @Html.DisplayControlsFor(m => m.Item.Definition)
-        @Html.DisplayControlsFor(m => m.Item.ValidFrom)
-        @Html.DisplayControlsFor(m => m.Item.ValidTo)
+        @Html.DisplayControlsFor(m => m.Item.Country)
+        @Html.DisplayControlsFor(m => m.Item.Description)
+        @Html.DisplayControlsFor(m => m.Item.YearOfManufacture)
     </body>
 @section Details {}

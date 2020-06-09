@@ -47,19 +47,17 @@ namespace Loppprojekt.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Makes",
+                name: "Marks",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
-                    ValidFrom = table.Column<DateTime>(nullable: true),
-                    ValidTo = table.Column<DateTime>(nullable: true),
-                    Code = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Definition = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false),
+                    Country = table.Column<string>(nullable: true),
+                    YearOfManufacture = table.Column<DateTime>(nullable: true),
+                    Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Makes", x => x.Id);
+                    table.PrimaryKey("PK_Marks", x => x.Name);
                 });
             migrationBuilder.CreateTable(
                 name: "ModelFactors",
@@ -67,8 +65,7 @@ namespace Loppprojekt.Soft.Migrations
                 {
                     SystemOfModelsId = table.Column<string>(nullable: false),
                     ModelId = table.Column<string>(nullable: false),
-                    ValidFrom = table.Column<DateTime>(nullable: true),
-                    ValidTo = table.Column<DateTime>(nullable: true),
+                    YearOfManufacture = table.Column<DateTime>(nullable: true),
                     Factor = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
@@ -80,32 +77,28 @@ namespace Loppprojekt.Soft.Migrations
                 name: "Models",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    Code = table.Column<string>(nullable: true),
-                    Definition = table.Column<string>(nullable: true),
-                    MakeId = table.Column<string>(nullable: true),
-                    ValidFrom = table.Column<DateTime>(nullable: true),
-                    ValidTo = table.Column<DateTime>(nullable: true)
+                    Name = table.Column<string>(nullable: false),
+                    Country = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    MarkId = table.Column<string>(nullable: true),
+                    YearOfManufacture = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Models", x => x.Id);
+                    table.PrimaryKey("PK_Models", x => x.Name);
                 });
             migrationBuilder.CreateTable(
                 name: "SystemsOfModels",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
-                    ValidFrom = table.Column<DateTime>(nullable: true),
-                    ValidTo = table.Column<DateTime>(nullable: true),
-                    Code = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Definition = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false),
+                    Country = table.Column<string>(nullable: true),
+                    YearOfManufacture = table.Column<DateTime>(nullable: true),
+                    Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SystemsOfModels", x => x.Id);
+                    table.PrimaryKey("PK_SystemsOfModels", x => x.Name);
                 });
 
             migrationBuilder.CreateTable(
@@ -125,7 +118,7 @@ namespace Loppprojekt.Soft.Migrations
                         name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
-                        principalColumn: "Id",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -146,7 +139,7 @@ namespace Loppprojekt.Soft.Migrations
                         name: "FK_AspNetUserClaims_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -166,7 +159,7 @@ namespace Loppprojekt.Soft.Migrations
                         name: "FK_AspNetUserLogins_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -184,13 +177,13 @@ namespace Loppprojekt.Soft.Migrations
                         name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
-                        principalColumn: "Id",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_AspNetUserRoles_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -210,7 +203,7 @@ namespace Loppprojekt.Soft.Migrations
                         name: "FK_AspNetUserTokens_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                 });
 

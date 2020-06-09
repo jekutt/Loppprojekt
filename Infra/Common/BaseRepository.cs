@@ -81,5 +81,6 @@ namespace Loppprojekt.Infra.Common
         }
 
         protected abstract string getId(TDomain entity);
-    }
+
+}
 }

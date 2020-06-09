@@ -2,7 +2,7 @@
 
 namespace Loppprojekt.Data.Cars
 {
-    public sealed class MakeData : DefinedEntityData
+    public sealed class MarkData : DefinedEntityData
     {
     }
 }

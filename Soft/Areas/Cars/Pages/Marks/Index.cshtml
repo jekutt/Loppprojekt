@@ -1,0 +1,38 @@
+﻿@page
+@using Loppprojekt.Pages.Extensions
+@model Loppprojekt.Soft.Areas.Cars.Pages.Marks.IndexModel
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create
+{
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create"))
+}
+
+<body>
+<table class="table">
+    <thead>
+    @Html.TableHeaderFor(
+        new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.Country), Model.GetSortString(m => m.Country, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.YearOfManufacture), Model.GetSortString(m => m.YearOfManufacture, page))
+        )
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            @Html.TableRowFor(
+                page,
+                item.Name,
+                Html.DisplayFor(modelItem => item.Name),
+                Html.DisplayFor(modelItem => item.Country),
+                Html.DisplayFor(modelItem => item.YearOfManufacture)
+                )
+        </tr>
+    }
+    </tbody>
+</table>
+</body>

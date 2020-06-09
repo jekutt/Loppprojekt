@@ -3,11 +3,11 @@ using Loppprojekt.Domain.Cars;
 using Loppprojekt.Pages.Cars;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Loppprojekt.Soft.Areas.Cars.Pages.Makes
+namespace Loppprojekt.Soft.Areas.Cars.Pages.Marks
 {
-    public class DetailsModel : MakesPage
+    public class DetailsModel : MarksPage
     {
-        public DetailsModel(IMakesRepository r) : base(r)
+        public DetailsModel(IMarksRepository r) : base(r)
         {
         }
 

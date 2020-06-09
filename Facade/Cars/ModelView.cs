@@ -7,7 +7,7 @@ namespace Loppprojekt.Facade.Cars
     public sealed class ModelView : DefinedView
     {
         [Required]
-        [DisplayName("Make")]
-        public string MakeId { get; set; }
+        [DisplayName("Mark")]
+        public string MarkId { get; set; }
     }
 }

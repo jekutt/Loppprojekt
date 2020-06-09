@@ -8,26 +8,26 @@ namespace Loppprojekt.Pages.Cars
 {
     public abstract class ModelsPage : BasePage<IModelsRepository, Model, ModelView, ModelData>
     {
-        protected internal ModelsPage(IModelsRepository r, IMakesRepository m) : base(r)
+        protected internal ModelsPage(IModelsRepository r, IMarksRepository m) : base(r)
         {
             PageTitle = "Models";
-            Makes = createMakes(m);
+            Marks = createMarks(m);
         }
 
-        private static IEnumerable<SelectListItem> createMakes(IMakesRepository r)
+        private static IEnumerable<SelectListItem> createMarks(IMarksRepository r)
         {
             var list = new List<SelectListItem>();
-            var makes = r.Get().GetAwaiter().GetResult();
-            foreach (var m in makes)
+            var marks = r.Get().GetAwaiter().GetResult();
+            foreach (var m in marks)
             {
-                list.Add(new SelectListItem(m.Data.Name, m.Data.Id));
+                list.Add(new SelectListItem(m.Data.Name, m.Data.Name));
             }
             return list;
         }
 
-        public IEnumerable<SelectListItem> Makes { get; }
+        public IEnumerable<SelectListItem> Marks { get; }
 
-        public override string ItemId => Item?.Id ?? string.Empty;
+        public override string ItemId => Item?.Name ?? string.Empty;
 
         protected internal override string getPageUrl() => "/Cars/Models";
 
@@ -35,7 +35,7 @@ namespace Loppprojekt.Pages.Cars
         {
             return FixedValue is null ?
                 base.getPageSubTitle()
-                : $"For {GetMakeName(FixedValue)}";
+                : $"For {GetMarkName(FixedValue)}";
         }
 
         protected internal override Model toObject(ModelView view)
@@ -47,10 +47,10 @@ namespace Loppprojekt.Pages.Cars
         {
             return ModelViewFactory.Create(obj);
         }
-        public string GetMakeName(string makeId)
+        public string GetMarkName(string markId)
         {
-            foreach (var m in Makes)
-                if (m.Value == makeId)
+            foreach (var m in Marks)
+                if (m.Value == markId)
                     return m.Text;
             return "Unspecified";
         }

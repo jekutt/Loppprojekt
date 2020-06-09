@@ -32,7 +32,7 @@ namespace Loppprojekt.Soft
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
-            services.AddScoped<IMakesRepository, MakesRepository>();
+            services.AddScoped<IMarksRepository, MarksRepository>();
             services.AddScoped<IModelsRepository, ModelsRepository>();
             services.AddServerSideBlazor();
         }

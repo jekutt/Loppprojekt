@@ -11,7 +11,7 @@ namespace Loppprojekt.Infra.Common
     {
         protected UniqueEntityRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
         protected override async Task<TData> getData(string id)
-            => await dbSet.FirstOrDefaultAsync(m => m.Id == id);
-        protected override string getId(TDomain entity) => entity?.Data?.Id;
+            => await dbSet.FirstOrDefaultAsync(m => m.Name == id);
+        protected override string getId(TDomain entity) => entity?.Data?.Name;
     }
 }

@@ -22,13 +22,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Facade\Facade.csproj" />
+    <ProjectReference Include="..\Infra\Infra.csproj" />
     <ProjectReference Include="..\Pages\Pages.csproj" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Folder Include="Areas\Cars\Pages\Makes\" />
+    <Folder Include="Areas\Cars\Pages\Marks\" />
     <Folder Include="Areas\Cars\Pages\Models\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 </Project>

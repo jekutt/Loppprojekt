@@ -3,11 +3,11 @@ using Loppprojekt.Domain.Cars;
 using Loppprojekt.Pages.Cars;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Loppprojekt.Soft.Areas.Cars.Pages.Makes
+namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
-    public class CreateModel : MakesPage
+    public class CreateModel : ModelsPage
     {
-        public CreateModel(IMakesRepository r) : base(r)
+        public CreateModel(IModelsRepository r, IMarksRepository m) : base(r, m)
         {
         }
 

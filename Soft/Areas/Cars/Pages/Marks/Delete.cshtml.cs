@@ -3,27 +3,26 @@ using Loppprojekt.Domain.Cars;
 using Loppprojekt.Pages.Cars;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Loppprojekt.Soft.Areas.Cars.Pages.Makes
+namespace Loppprojekt.Soft.Areas.Cars.Pages.Marks
 {
-    public class EditModel : MakesPage
+    public class DeleteModel : MarksPage
     {
-        public EditModel(IMakesRepository r) : base(r)
+        public DeleteModel(IMarksRepository r) : base(r)
         {
         }
-
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await getObject(id, fixedFilter, fixedValue);
-
             return Page();
         }
 
-
-        public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            await updateObject(fixedFilter, fixedValue);
+            await deleteObject(id, fixedFilter, fixedValue);
             return Redirect(IndexUrl);
         }
+
     }
 
 }
+

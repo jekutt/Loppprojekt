@@ -3,7 +3,7 @@ using Loppprojekt.Domain.Cars;
 using Loppprojekt.Pages.Cars;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Loppprojekt.Soft.Areas.Cars.Pages.Models
+namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
     public class DeleteModel : ModelsPage
     {

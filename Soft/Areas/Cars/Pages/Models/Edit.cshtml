@@ -7,11 +7,10 @@
 }
 
     <body>
-        <input type="hidden" asp-for="Item.Id" />
-        @Html.EditControlsForDropDown(m => m.Item.MakeId, Model.Makes)
-        @Html.EditControlsFor(m => m.Item.Code)
+        <input type="hidden" asp-for="Item.Name" />
+        @Html.EditControlsForDropDown(m => m.Item.MarkId, Model.Marks)
         @Html.EditControlsFor(m => m.Item.Name)
-        @Html.EditControlsFor(m => m.Item.Definition)
-        @Html.EditControlsFor(m => m.Item.ValidFrom)
-        @Html.EditControlsFor(m => m.Item.ValidTo)
+        @Html.EditControlsFor(m => m.Item.Country)
+        @Html.EditControlsFor(m => m.Item.Description)
+        @Html.EditControlsFor(m => m.Item.YearOfManufacture)
     </body>

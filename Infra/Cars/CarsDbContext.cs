@@ -10,7 +10,7 @@ namespace Loppprojekt.Infra.Cars
         {
         }
 
-        public DbSet<MakeData> Makes { get; set; }
+        public DbSet<MarkData> Marks { get; set; }
         public DbSet<ModelData> Models { get; set; }
         public DbSet<SystemOfModelsData> SystemsOfModels { get; set; }
         public DbSet<ModelFactorData> ModelFactors { get; set; }
@@ -22,9 +22,9 @@ namespace Loppprojekt.Infra.Cars
         }
         public static void InitializeTables(ModelBuilder builder)
         {
-            builder.Entity<MakeData>().ToTable(nameof(Makes));
-            builder.Entity<ModelData>().ToTable(nameof(Models));
-            builder.Entity<SystemOfModelsData>().ToTable(nameof(SystemsOfModels));
+            builder.Entity<MarkData>().ToTable(nameof(Marks)).HasKey(x => x.Name);
+            builder.Entity<ModelData>().ToTable(nameof(Models)).HasKey(x => x.Name);
+            builder.Entity<SystemOfModelsData>().ToTable(nameof(SystemsOfModels)).HasKey(x => x.Name);
             builder.Entity<ModelFactorData>().ToTable(nameof(ModelFactors)).HasKey(x => new { x.ModelId, x.SystemOfModelsId });
         }
     }

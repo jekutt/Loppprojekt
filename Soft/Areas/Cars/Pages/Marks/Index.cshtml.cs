@@ -2,16 +2,17 @@
 using Loppprojekt.Domain.Cars;
 using Loppprojekt.Pages.Cars;
 
-namespace Loppprojekt.Soft.Areas.Cars.Pages.Models
+namespace Loppprojekt.Soft.Areas.Cars.Pages.Marks
 {
-    public class IndexModel : ModelsPage
+    public class IndexModel : MarksPage
     {
-        public IndexModel(IModelsRepository r, IMarksRepository m) : base(r, m) { }
+        public IndexModel(IMarksRepository r) : base(r) { }
 
         public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue)
         {
-            await getList(sortOrder, currentFilter, searchString, pageIndex, fixedFilter, fixedValue);
+            await getList(sortOrder, currentFilter, searchString, pageIndex,
+                fixedFilter, fixedValue);
         }
     }
 }

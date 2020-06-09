@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Loppprojekt.Data.Cars;
 
@@ -6,29 +7,29 @@ namespace Loppprojekt.Infra.Cars
 {
     public static class CarsDbInitializer
     {
-        internal static MakeData bmw = new MakeData
+        internal static MarkData bmw = new MarkData
         {
-            Id = "BMW",
             Name = "BMW",
-            Code = "BMW",
-            Definition = "German car"
+            Country = "GR",
+            Description = "German car",
+            YearOfManufacture = Convert.ToDateTime("06/06/2009")
         };
-        internal static MakeData mercedes = new MakeData
+        internal static MarkData mercedes = new MarkData
         {
-            Id = "Mercedes",
             Name = "Mercedes",
-            Code = "Mercedes",
-            Definition = "German car"
+            Country = "GR",
+            Description = "German car",
+            YearOfManufacture = Convert.ToDateTime("06/06/2009")
         };
-        internal static MakeData honda = new MakeData
+        internal static MarkData honda = new MarkData
         {
-            Id = "Honda",
             Name = "Honda",
-            Code = "Honda",
-            Definition = "Japan car"
+            Country = "JP",
+            Description = "Japan car",
+            YearOfManufacture = Convert.ToDateTime("06/06/2009")
         };
         
-        internal static List<MakeData> makes => new List<MakeData>
+        internal static List<MarkData> marks => new List<MarkData>
         {
             bmw, mercedes, honda
         };
@@ -38,9 +39,9 @@ namespace Loppprojekt.Infra.Cars
 
         internal static List<ModelData> bmwModels => new List<ModelData>
         {
-            createModelData(bmw.Id, E39Name),
-            createModelData(bmw.Id, E60Name),
-            createModelData(bmw.Id, X5Name)
+            createModelData(bmw.Name, E39Name),
+            createModelData(bmw.Name, E60Name),
+            createModelData(bmw.Name, X5Name)
         };
 
         public const string SClassName = "SClass";
@@ -48,32 +49,33 @@ namespace Loppprojekt.Infra.Cars
         public const string CClassName = "CClass";
         internal static List<ModelData> mercedesModels => new List<ModelData>
         {
-            createModelData(mercedes.Id, SClassName),
-            createModelData(mercedes.Id, EClassName),
-            createModelData(mercedes.Id, CClassName)
+            createModelData(mercedes.Name, SClassName),
+            createModelData(mercedes.Name, EClassName),
+            createModelData(mercedes.Name, CClassName)
         };
         public const string CRVName = "CRV";
         public const string CivicName = "Civic";
         internal static List<ModelData> hondaModels => new List<ModelData>
         {
-            createModelData(honda.Id, CRVName),
-            createModelData(honda.Id, CivicName)
+            createModelData(honda.Name, CRVName),
+            createModelData(honda.Name, CivicName)
         };
 
-        private static ModelData createModelData(string makeId, string id, string name = null, string code = null)
+        private static ModelData createModelData(string markId, string name, string description = null, string country = null, string yearOfManufacture = null)
         {
             return new ModelData
             {
-                Id = id,
-                MakeId = makeId,
-                Name = name ?? id,
-                Code = code
+                MarkId = markId,
+                Name = name,
+                Country = country,
+                Description = description,
+                YearOfManufacture = Convert.ToDateTime(yearOfManufacture)
             };
         }
 
         public static void Initialize(CarsDbContext db)
         {
-            initializeMakes(db);
+            initializeMarks(db);
             initializeModels(db);
         }
 
@@ -86,10 +88,10 @@ namespace Loppprojekt.Infra.Cars
             db.SaveChanges();
         }
 
-        private static void initializeMakes(CarsDbContext db)
+        private static void initializeMarks(CarsDbContext db)
         {
-            if (db.Makes.Count() != 0) return;
-            db.Makes.AddRange(makes);
+            if (db.Marks.Count() != 0) return;
+            db.Marks.AddRange(marks);
             db.SaveChanges();
         }
 

@@ -21,80 +21,62 @@ namespace Loppprojekt.Soft.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Facade.Cars.MakeView", b =>
+            modelBuilder.Entity("Facade.Cars.MarkView", b =>
             {
-                b.Property<string>("Id")
+                b.Property<string>("Name")
                     .HasColumnType("nvarchar(450)");
 
-                b.Property<string>("Code")
+                b.Property<string>("Country")
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("Definition")
+                b.Property<string>("Description")
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("Name")
-                    .HasColumnType("nvarchar(max)");
-
-                b.Property<DateTime?>("ValidFrom")
+                b.Property<DateTime?>("YearOfManufacture")
                     .HasColumnType("datetime2");
 
-                b.Property<DateTime?>("ValidTo")
-                    .HasColumnType("datetime2");
+                b.HasKey("Name");
 
-                b.HasKey("Id");
-
-                b.ToTable("Makes");
+                b.ToTable("Marks");
             });
 
             modelBuilder.Entity("Data.Cars.SystemOfModelsData", b =>
             {
-                b.Property<string>("Id")
+                b.Property<string>("Name")
                     .HasColumnType("nvarchar(450)");
 
-                b.Property<string>("Code")
+                b.Property<string>("Country")
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("Definition")
+                b.Property<string>("Description")
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("Name")
-                    .HasColumnType("nvarchar(max)");
-
-                b.Property<DateTime?>("ValidFrom")
+                b.Property<DateTime?>("YearOfManufacture")
                     .HasColumnType("datetime2");
 
-                b.Property<DateTime?>("ValidTo")
-                    .HasColumnType("datetime2");
-
-                b.HasKey("Id");
+                b.HasKey("Name");
 
                 b.ToTable("SystemsOfModels");
             });
 
             modelBuilder.Entity("Data.Cars.ModelData", b =>
             {
-                b.Property<string>("Id")
+                b.Property<string>("Name")
                     .HasColumnType("nvarchar(450)");
 
-                b.Property<string>("Code")
+                b.Property<string>("Country")
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("Definition")
+                b.Property<string>("Description")
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("MakeId")
+                b.Property<string>("MarkId")
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("Name")
-                    .HasColumnType("nvarchar(max)");
-
-                b.Property<DateTime?>("ValidFrom")
+                b.Property<DateTime?>("YearOfManufacture")
                     .HasColumnType("datetime2");
 
-                b.Property<DateTime?>("ValidTo")
-                    .HasColumnType("datetime2");
-
-                b.HasKey("Id");
+                b.HasKey("Name");
 
                 b.ToTable("Models");
             });
@@ -110,10 +92,7 @@ namespace Loppprojekt.Soft.Migrations
                 b.Property<double>("Factor")
                     .HasColumnType("float");
 
-                b.Property<DateTime?>("ValidFrom")
-                    .HasColumnType("datetime2");
-
-                b.Property<DateTime?>("ValidTo")
+                b.Property<DateTime?>("YearOfManufacture")
                     .HasColumnType("datetime2");
 
                 b.HasKey("SystemOfModelsId", "ModelId");
@@ -123,7 +102,7 @@ namespace Loppprojekt.Soft.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -138,7 +117,7 @@ namespace Loppprojekt.Soft.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.HasKey("Id");
+                    b.HasKey("Name");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
@@ -150,7 +129,7 @@ namespace Loppprojekt.Soft.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Name")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -165,7 +144,7 @@ namespace Loppprojekt.Soft.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Name");
 
                     b.HasIndex("RoleId");
 
@@ -174,7 +153,7 @@ namespace Loppprojekt.Soft.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
@@ -224,7 +203,7 @@ namespace Loppprojekt.Soft.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.HasKey("Id");
+                    b.HasKey("Name");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -239,7 +218,7 @@ namespace Loppprojekt.Soft.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Name")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -254,7 +233,7 @@ namespace Loppprojekt.Soft.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Name");
 
                     b.HasIndex("UserId");
 

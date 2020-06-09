@@ -1,9 +1,9 @@
 ﻿@page
 @using Loppprojekt.Pages.Extensions
-@model Loppprojekt.Soft.Areas.Cars.Pages.Models.DeleteModel
+@model Loppprojekt.Soft.Areas.Cars.Pages.Generations.DetailsModel
 
 @{
-    Layout = "_Delete";
+    Layout = "_Details";
 }
 
     <body>
@@ -13,3 +13,4 @@
         @Html.DisplayControlsFor(m => m.Item.Description)
         @Html.DisplayControlsFor(m => m.Item.YearOfManufacture)
     </body>
+@section Details {}

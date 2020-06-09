@@ -7,10 +7,7 @@ namespace Loppprojekt.Facade.Common
     public abstract class PeriodView
     {
         [DataType(DataType.Date)]
-        [DisplayName("Valid from")]
-        public DateTime? ValidFrom { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayName("Valid to")]
-        public DateTime? ValidTo { get; set; }
+        [DisplayName("Year of manufacture")]
+        public DateTime? YearOfManufacture { get; set; }
     }
 }

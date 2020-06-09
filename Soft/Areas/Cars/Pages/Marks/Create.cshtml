@@ -1,13 +1,12 @@
 ﻿@page
 @using Loppprojekt.Pages.Extensions
-@model Loppprojekt.Soft.Areas.Cars.Pages.Models.CreateModel
+@model Loppprojekt.Soft.Areas.Cars.Pages.Marks.CreateModel
 
 @{
     Layout = "_Create";
 }
 
     <body>
-        @Html.EditControlsForDropDown(m => m.Item.MarkId, Model.Marks)
         @Html.EditControlsFor(m => m.Item.Name)
         @Html.EditControlsFor(m => m.Item.Country)
         @Html.EditControlsFor(m => m.Item.Description)

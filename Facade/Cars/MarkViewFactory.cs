@@ -3,18 +3,18 @@ using Loppprojekt.Domain.Cars;
 
 namespace Loppprojekt.Facade.Cars
 {
-    public static class MakeViewFactory
+    public static class MarkViewFactory
     {
-        public static Make Create(MakeView v)
+        public static Mark Create(MarkView v)
         {
-            var o = new Make();
+            var o = new Mark();
             Copy.Members(v, o.Data);
 
             return o;
         }
-        public static MakeView Create(Make o)
+        public static MarkView Create(Mark o)
         {
-            var v = new MakeView();
+            var v = new MarkView();
             Copy.Members(o.Data, v);
 
             return v;

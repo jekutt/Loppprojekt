@@ -2,5 +2,5 @@
 
 namespace Loppprojekt.Facade.Cars
 {
-    public sealed class MakeView : DefinedView { }
+    public sealed class MarkView : DefinedView { }
 }

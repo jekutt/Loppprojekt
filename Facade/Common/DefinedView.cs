@@ -2,6 +2,6 @@
 {
     public abstract class DefinedView : NamedView
     {
-        public string Definition { get; set; }
+        public string Description { get; set; }
     }
 }
