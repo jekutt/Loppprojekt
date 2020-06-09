@@ -1,16 +1,24 @@
 ﻿@page
+@using Loppprojekt.Aids.Reflection
+@using Loppprojekt.Data.Cars
 @using Loppprojekt.Pages.Extensions
 @model Loppprojekt.Soft.Areas.Cars.Pages.Models.DetailsModel
 
 @{
     Layout = "_Details";
+    const string generations = "/Cars/Generations";
+    var modelsId = GetMember.Name<GenerationData>(x => x.ModelsId);
 }
 
-    <body>
-        @Html.DisplayControlsFor(m => m.Item.MarkId, Model.GetMarkName(Model.Item.MarkId))
-        @Html.DisplayControlsFor(m => m.Item.Name)
-        @Html.DisplayControlsFor(m => m.Item.Country)
-        @Html.DisplayControlsFor(m => m.Item.Description)
-        @Html.DisplayControlsFor(m => m.Item.YearOfManufacture)
-    </body>
-@section Details {}
+<body>
+    @Html.DisplayControlsFor(m => m.Item.MarkId, Model.GetMarkName(Model.Item.MarkId))
+    @Html.DisplayControlsFor(m => m.Item.Name)
+    @Html.DisplayControlsFor(m => m.Item.Country)
+    @Html.DisplayControlsFor(m => m.Item.Description)
+    @Html.DisplayControlsFor(m => m.Item.YearOfManufacture)
+</body>
+@section Details
+{
+    @Html.HypertextLinkFor(string.Empty, new Link("Show generations",
+        $"{generations}/Index?fixedFilter={modelsId}&fixedValue={Model.Item.Name}"))
+}

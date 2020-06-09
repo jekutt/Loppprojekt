@@ -33,15 +33,15 @@ namespace Loppprojekt.Infra.Cars
         {
             bmw, mercedes, honda
         };
-        public const string E39Name = "E39";
-        public const string E60Name = "E60";
-        public const string X5Name = "X5";
+        public const string series3 = "3.series";
+        public const string series5 = "5.series";
+        public const string X5 = "X5";
 
         internal static List<ModelData> bmwModels => new List<ModelData>
         {
-            createModelData(bmw.Name, E39Name),
-            createModelData(bmw.Name, E60Name),
-            createModelData(bmw.Name, X5Name)
+            createModelData(bmw.Name, series3),
+            createModelData(bmw.Name, series5),
+            createModelData(bmw.Name, X5)
         };
 
         public const string SClassName = "SClass";
@@ -61,6 +61,22 @@ namespace Loppprojekt.Infra.Cars
             createModelData(honda.Name, CivicName)
         };
 
+        public const string E36 = "E36";
+        public const string E46 = "E46";
+
+        internal static List<GenerationData> series3Generation => new List<GenerationData>
+        {
+            createGenerationData(bmw.Name, series3, E36),
+            createGenerationData(bmw.Name, series3, E46)
+        };
+        public const string E34 = "E34";
+        public const string E60 = "E60";
+        internal static List<GenerationData> series5Generation => new List<GenerationData>
+        {
+            createGenerationData(bmw.Name, series5, E34),
+            createGenerationData(bmw.Name, series5, E60)
+        };
+
         private static ModelData createModelData(string markId, string name, string description = null, string country = null, string yearOfManufacture = null)
         {
             return new ModelData
@@ -73,10 +89,24 @@ namespace Loppprojekt.Infra.Cars
             };
         }
 
+        private static GenerationData createGenerationData(string markId, string modelsId, string name, string description = null, string country = null, string yearOfManufacture = null)
+        {
+            return new GenerationData
+            {
+                MarkId = markId,
+                ModelsId = modelsId,
+                Name = name,
+                Country = country,
+                Description = description,
+                YearOfManufacture = Convert.ToDateTime(yearOfManufacture)
+            };
+        }
+
         public static void Initialize(CarsDbContext db)
         {
             initializeMarks(db);
             initializeModels(db);
+            initializeGenerations(db);
         }
 
         private static void initializeModels(CarsDbContext db)
@@ -92,6 +122,14 @@ namespace Loppprojekt.Infra.Cars
         {
             if (db.Marks.Count() != 0) return;
             db.Marks.AddRange(marks);
+            db.SaveChanges();
+        }
+
+        private static void initializeGenerations(CarsDbContext db)
+        {
+            if (db.Generations.Count() != 0) return;
+            db.Generations.AddRange(series3Generation);
+            db.Generations.AddRange(series5Generation);
             db.SaveChanges();
         }
 

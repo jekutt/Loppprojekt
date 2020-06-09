@@ -1,6 +1,6 @@
-﻿namespace Loppprojekt.Domain.Cars
+﻿using Loppprojekt.Domain.Common;
+
+namespace Loppprojekt.Domain.Cars
 {
-    class IGenerationsRepository
-    {
-    }
+    public interface IGenerationsRepository : IRepository<Generation> { }
 }

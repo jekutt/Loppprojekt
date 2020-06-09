@@ -9,6 +9,6 @@ namespace Loppprojekt.Data.Cars
     {
         public string GenerationId { get; set; }
         public string SystemOfGenerationsId { get; set; }
-        public string Year
+        public double Factor { get; set; }
     }
 }

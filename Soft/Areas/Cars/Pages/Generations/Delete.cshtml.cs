@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
-    public class DeleteModel : ModelsPage
+    public class DeleteModel : GenerationsPage
     {
-        public DeleteModel(IModelsRepository r, IMarksRepository m) : base(r, m)
+        public DeleteModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s)
         {
         }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)

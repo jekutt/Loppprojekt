@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
-    public class CreateModel : ModelsPage
+    public class CreateModel : GenerationsPage
     {
-        public CreateModel(IModelsRepository r, IMarksRepository m) : base(r, m)
+        public CreateModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s)
         {
         }
 

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Loppprojekt.Data.Common;
 
 namespace Loppprojekt.Data.Cars
 {
-    class SystemOfGenerationsData
+    public sealed class SystemOfGenerationsData : DefinedEntityData
     {
     }
 }

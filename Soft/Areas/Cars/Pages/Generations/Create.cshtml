@@ -6,10 +6,11 @@
     Layout = "_Create";
 }
 
-<body>
-    @Html.EditControlsForDropDown(m => m.Item.MarkId, Model.Marks)
-    @Html.EditControlsFor(m => m.Item.Name)
-    @Html.EditControlsFor(m => m.Item.Country)
-    @Html.EditControlsFor(m => m.Item.Description)
-    @Html.EditControlsFor(m => m.Item.YearOfManufacture)
-</body>
+    <body>
+        @Html.EditControlsForDropDown(m => m.Item.MarkId, Model.Marks)
+        @Html.EditControlsForDropDown(m => m.Item.ModelsId, Model.Models)
+        @Html.EditControlsFor(m => m.Item.Name)
+        @Html.EditControlsFor(m => m.Item.Country)
+        @Html.EditControlsFor(m => m.Item.Description)
+        @Html.EditControlsFor(m => m.Item.YearOfManufacture)
+    </body>

@@ -4,9 +4,9 @@ using Loppprojekt.Pages.Cars;
 
 namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
-    public class IndexModel : ModelsPage
+    public class IndexModel : GenerationsPage
     {
-        public IndexModel(IModelsRepository r, IMarksRepository m) : base(r, m) { }
+        public IndexModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s) { }
 
         public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue)
