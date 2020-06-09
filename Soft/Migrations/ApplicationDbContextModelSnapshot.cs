@@ -106,10 +106,6 @@ namespace Loppprojekt.Soft.Migrations
                     .IsConcurrencyToken()
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("Name")
-                    .HasColumnType("nvarchar(256)")
-                    .HasMaxLength(256);
-
                 b.Property<string>("NormalizedName")
                     .HasColumnType("nvarchar(256)")
                     .HasMaxLength(256);
