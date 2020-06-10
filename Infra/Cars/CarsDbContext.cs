@@ -13,10 +13,6 @@ namespace Loppprojekt.Infra.Cars
         public DbSet<MarkData> Marks { get; set; }
         public DbSet<ModelData> Models { get; set; }
         public DbSet<GenerationData> Generations { get; set; }
-        public DbSet<SystemOfModelsData> SystemsOfModels { get; set; }
-        public DbSet<ModelFactorData> ModelFactors { get; set; }
-        public DbSet<SystemOfGenerationsData> SystemsOfGenerations { get; set; }
-        public DbSet<GenerationFactorData> GenerationFactors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -27,11 +23,7 @@ namespace Loppprojekt.Infra.Cars
         {
             builder.Entity<MarkData>().ToTable(nameof(Marks)).HasKey(x => x.Name);
             builder.Entity<ModelData>().ToTable(nameof(Models)).HasKey(x => x.Name);
-            builder.Entity<SystemOfModelsData>().ToTable(nameof(SystemsOfModels)).HasKey(x => x.Name);
-            builder.Entity<ModelFactorData>().ToTable(nameof(ModelFactors)).HasKey(x => new { x.ModelId, x.SystemOfModelsId });
             builder.Entity<GenerationData>().ToTable(nameof(Generations)).HasKey(x => x.Name);
-            builder.Entity<SystemOfGenerationsData>().ToTable(nameof(SystemsOfGenerations)).HasKey(x => x.Name);
-            builder.Entity<GenerationFactorData>().ToTable(nameof(GenerationFactors)).HasKey(x => new { x.GenerationId, x.SystemOfGenerationsId });
         }
     }
 }

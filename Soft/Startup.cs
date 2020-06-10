@@ -34,6 +34,7 @@ namespace Loppprojekt.Soft
             services.AddRazorPages();
             services.AddScoped<IMarksRepository, MarksRepository>();
             services.AddScoped<IModelsRepository, ModelsRepository>();
+            services.AddScoped<IGenerationsRepository, GenerationsRepository>();
             services.AddServerSideBlazor();
         }
 

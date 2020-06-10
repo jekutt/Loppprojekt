@@ -7,7 +7,7 @@ namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
     public class EditModel : GenerationsPage
     {
-        public EditModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s)
+        public EditModel(IGenerationsRepository r, IModelsRepository m) : base(r, m)
         {
         }
 

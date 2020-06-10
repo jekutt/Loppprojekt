@@ -7,7 +7,7 @@ namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
     public class DetailsModel : GenerationsPage
     {
-        public DetailsModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s)
+        public DetailsModel(IGenerationsRepository r, IModelsRepository m) : base(r, m)
         {
         }
 

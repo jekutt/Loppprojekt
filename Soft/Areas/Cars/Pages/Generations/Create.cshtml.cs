@@ -7,7 +7,7 @@ namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
     public class CreateModel : GenerationsPage
     {
-        public CreateModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s)
+        public CreateModel(IGenerationsRepository r, IModelsRepository m) : base(r, m)
         {
         }
 

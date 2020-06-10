@@ -58,21 +58,8 @@ namespace Loppprojekt.Soft.Migrations
                 {
                     table.PrimaryKey("PK_Marks", x => x.Name);
                 });
-            migrationBuilder.CreateTable(
-                name: "ModelFactors",
-                columns: table => new
-                {
-                    SystemOfModelsId = table.Column<string>(nullable: false),
-                    ModelId = table.Column<string>(nullable: false),
-                    YearOfManufacture = table.Column<DateTime>(nullable: true),
-                    Factor = table.Column<double>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ModelFactors", x => new {x.SystemOfModelsId, x.ModelId});
-                });
 
-                    migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "Models",
                 columns: table => new
                 {
@@ -86,18 +73,23 @@ namespace Loppprojekt.Soft.Migrations
                 {
                     table.PrimaryKey("PK_Models", x => x.Name);
                 });
+
             migrationBuilder.CreateTable(
-                name: "SystemsOfModels",
+                name: "Generations",
                 columns: table => new
                 {
                     Name = table.Column<string>(nullable: false),
+                    MarkId = table.Column<string>(nullable: true),
+                    ModelsId = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: true),
-                    YearOfManufacture = table.Column<DateTime>(nullable: true),
-                    Description = table.Column<string>(nullable: true)
+                    BodyType = table.Column<string>(nullable: true),
+                    DrivenWheel = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    YearOfManufacture = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SystemsOfModels", x => x.Name);
+                    table.PrimaryKey("PK_Generations", x => x.Name);
                 });
 
             migrationBuilder.CreateTable(

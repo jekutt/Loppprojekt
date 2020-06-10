@@ -6,6 +6,8 @@ namespace Loppprojekt.Data.Cars
     {
         public string MarkId { get; set; }
         public string ModelsId { get; set; }
+        public string BodyType { get; set; }
+        public string DrivenWheel { get; set; }
 
     }
 }

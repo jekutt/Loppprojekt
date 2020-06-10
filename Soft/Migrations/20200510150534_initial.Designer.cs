@@ -21,7 +21,7 @@ namespace Loppprojekt.Soft.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Facade.Cars.MarkView", b =>
+            modelBuilder.Entity("Loppprojekt.Data.Cars.MarkData", b =>
             {
                 b.Property<string>("Name")
                     .HasColumnType("nvarchar(450)");
@@ -40,26 +40,7 @@ namespace Loppprojekt.Soft.Migrations
                 b.ToTable("Marks");
             });
 
-            modelBuilder.Entity("Data.Cars.SystemOfModelsData", b =>
-            {
-                b.Property<string>("Name")
-                    .HasColumnType("nvarchar(450)");
-
-                b.Property<string>("Country")
-                    .HasColumnType("nvarchar(max)");
-
-                b.Property<string>("Description")
-                    .HasColumnType("nvarchar(max)");
-
-                b.Property<DateTime?>("YearOfManufacture")
-                    .HasColumnType("datetime2");
-
-                b.HasKey("Name");
-
-                b.ToTable("SystemsOfModels");
-            });
-
-            modelBuilder.Entity("Data.Cars.ModelData", b =>
+            modelBuilder.Entity("Loppprojekt.Data.Cars.ModelData", b =>
             {
                 b.Property<string>("Name")
                     .HasColumnType("nvarchar(450)");
@@ -81,23 +62,35 @@ namespace Loppprojekt.Soft.Migrations
                 b.ToTable("Models");
             });
 
-            modelBuilder.Entity("Data.Cars.ModelFactorData", b =>
+            modelBuilder.Entity("Loppprojekt.Data.Cars.GenerationData", b =>
             {
-                b.Property<string>("SystemOfModelsId")
+                b.Property<string>("Name")
                     .HasColumnType("nvarchar(450)");
 
-                b.Property<string>("ModelId")
-                    .HasColumnType("nvarchar(450)");
+                b.Property<string>("MarkId")
+                    .HasColumnType("nvarchar(max)");
 
-                b.Property<double>("Factor")
-                    .HasColumnType("float");
+                b.Property<string>("ModelsId")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Country")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("BodyType")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("DrivenWheel")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Description")
+                    .HasColumnType("nvarchar(max)");
 
                 b.Property<DateTime?>("YearOfManufacture")
                     .HasColumnType("datetime2");
 
-                b.HasKey("SystemOfModelsId", "ModelId");
+                b.HasKey("Name");
 
-                b.ToTable("ModelFactors");
+                b.ToTable("Generations");
             });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

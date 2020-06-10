@@ -6,7 +6,7 @@ namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
     public class IndexModel : GenerationsPage
     {
-        public IndexModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s) { }
+        public IndexModel(IGenerationsRepository r, IModelsRepository m) : base(r, m) { }
 
         public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue)

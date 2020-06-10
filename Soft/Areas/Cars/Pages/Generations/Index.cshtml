@@ -19,6 +19,8 @@
             new Link(Html.DisplayNameFor(m => m.Item.ModelsId), Model.GetSortString(m => m.ModelsId, page)),
             new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
             new Link(Html.DisplayNameFor(m => m.Item.Country), Model.GetSortString(m => m.Country, page)),
+            new Link(Html.DisplayNameFor(m => m.Item.BodyType), Model.GetSortString(m => m.BodyType, page)),
+            new Link(Html.DisplayNameFor(m => m.Item.DrivenWheel), Model.GetSortString(m => m.DrivenWheel, page)),
             new Link(Html.DisplayNameFor(m => m.Item.YearOfManufacture), Model.GetSortString(m => m.YearOfManufacture, page))
             )
     </thead>
@@ -31,10 +33,12 @@
                     item.Name,
                     Model.FixedFilter,
                     Model.FixedValue,
-                    Html.Raw(Model.GetMarkName(item.MarkId)),
-                    Html.Raw(Model.GetModelName(item.ModelsId)),
+                    Html.DisplayFor(modelItem => item.MarkId),
+                    Html.DisplayFor(modelItem => item.ModelsId),
                     Html.DisplayFor(modelItem => item.Name),
                     Html.DisplayFor(modelItem => item.Country),
+                    Html.DisplayFor(modelItem => item.BodyType),
+                    Html.DisplayFor(modelItem => item.DrivenWheel),
                     Html.DisplayFor(modelItem => item.YearOfManufacture)
                     )
             </tr>

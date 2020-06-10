@@ -7,10 +7,12 @@
 }
 
     <body>
-        @Html.DisplayControlsFor(m => m.Item.MarkId, Model.GetMarkName(Model.Item.MarkId))
-        @Html.DisplayControlsFor(m => m.Item.ModelsId, Model.GetModelName(Model.Item.ModelsId))
+        @Html.DisplayControlsFor(m => m.Item.MarkId)
+        @Html.DisplayControlsFor(m => m.Item.ModelsId)
         @Html.DisplayControlsFor(m => m.Item.Name)
         @Html.DisplayControlsFor(m => m.Item.Country)
+        @Html.DisplayControlsFor(m => m.Item.BodyType)
+        @Html.DisplayControlsFor(m => m.Item.DrivenWheel)
         @Html.DisplayControlsFor(m => m.Item.Description)
         @Html.DisplayControlsFor(m => m.Item.YearOfManufacture)
     </body>

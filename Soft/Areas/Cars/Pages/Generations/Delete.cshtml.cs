@@ -7,7 +7,7 @@ namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations
 {
     public class DeleteModel : GenerationsPage
     {
-        public DeleteModel(IGenerationsRepository r, IModelsRepository m, IMarksRepository s) : base(r, m, s)
+        public DeleteModel(IGenerationsRepository r, IModelsRepository m) : base(r, m)
         {
         }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)

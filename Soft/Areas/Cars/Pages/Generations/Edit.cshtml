@@ -8,10 +8,12 @@
 
     <body>
         <input type="hidden" asp-for="Item.Name" />
-        @Html.EditControlsForDropDown(m => m.Item.MarkId, Model.Marks)
-        @Html.EditControlsForDropDown(m => m.Item.ModelsId, Model.Models)
+        @Html.EditControlsFor(m => m.Item.MarkId)
+        @Html.EditControlsFor(m => m.Item.ModelsId)
         @Html.EditControlsFor(m => m.Item.Name)
         @Html.EditControlsFor(m => m.Item.Country)
+        @Html.EditControlsFor(m => m.Item.BodyType)
+        @Html.EditControlsFor(m => m.Item.DrivenWheel)
         @Html.EditControlsFor(m => m.Item.Description)
         @Html.EditControlsFor(m => m.Item.YearOfManufacture)
     </body>
