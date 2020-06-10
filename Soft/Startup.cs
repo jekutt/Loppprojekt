@@ -1,5 +1,12 @@
 using Loppprojekt.Domain.Cars;
+using Loppprojekt.Domain.Cars.Generations;
+using Loppprojekt.Domain.Cars.Marks;
+using Loppprojekt.Domain.Cars.Models;
 using Loppprojekt.Infra.Cars;
+using Loppprojekt.Infra.Cars.CarsDb;
+using Loppprojekt.Infra.Cars.Generations;
+using Loppprojekt.Infra.Cars.Marks;
+using Loppprojekt.Infra.Cars.Models;
 using Loppprojekt.Soft.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

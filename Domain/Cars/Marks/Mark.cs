@@ -1,7 +1,7 @@
-﻿using Loppprojekt.Data.Cars;
+﻿using Loppprojekt.Data.Cars.Marks;
 using Loppprojekt.Domain.Common;
 
-namespace Loppprojekt.Domain.Cars
+namespace Loppprojekt.Domain.Cars.Marks
 {
     public sealed class Mark : Entity<MarkData>
     {

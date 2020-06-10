@@ -1,7 +1,7 @@
 ﻿using Loppprojekt.Aids.Methods;
-using Loppprojekt.Domain.Cars;
+using Loppprojekt.Domain.Cars.Generations;
 
-namespace Loppprojekt.Facade.Cars
+namespace Loppprojekt.Facade.Cars.Generations
 {
     public static class GenerationViewFactory
     {

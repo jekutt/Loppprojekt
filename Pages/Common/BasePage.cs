@@ -8,7 +8,7 @@ using Loppprojekt.Domain.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Loppprojekt.Pages
+namespace Loppprojekt.Pages.Common
 {
     public abstract class BasePage<TRepository, TDomain, TView, TData> : PageModel
     where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging

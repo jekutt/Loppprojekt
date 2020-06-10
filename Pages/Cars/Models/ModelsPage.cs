@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
-using Loppprojekt.Data.Cars;
-using Loppprojekt.Domain.Cars;
-using Loppprojekt.Facade.Cars;
+using Loppprojekt.Data.Cars.Models;
+using Loppprojekt.Domain.Cars.Marks;
+using Loppprojekt.Domain.Cars.Models;
+using Loppprojekt.Facade.Cars.Models;
+using Loppprojekt.Pages.Common;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Loppprojekt.Pages.Cars
+namespace Loppprojekt.Pages.Cars.Models
 {
     public abstract class ModelsPage : BasePage<IModelsRepository, Model, ModelView, ModelData>
     {

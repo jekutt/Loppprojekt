@@ -1,6 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Loppprojekt.Domain.Cars;
+using Loppprojekt.Domain.Cars.Generations;
+using Loppprojekt.Domain.Cars.Models;
 using Loppprojekt.Pages.Cars;
+using Loppprojekt.Pages.Cars.Generations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Loppprojekt.Soft.Areas.Cars.Pages.Generations

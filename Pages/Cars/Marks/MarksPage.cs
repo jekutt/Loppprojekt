@@ -1,8 +1,9 @@
-﻿using Loppprojekt.Data.Cars;
-using Loppprojekt.Domain.Cars;
-using Loppprojekt.Facade.Cars;
+﻿using Loppprojekt.Data.Cars.Marks;
+using Loppprojekt.Domain.Cars.Marks;
+using Loppprojekt.Facade.Cars.Marks;
+using Loppprojekt.Pages.Common;
 
-namespace Loppprojekt.Pages.Cars
+namespace Loppprojekt.Pages.Cars.Marks
 {
     public abstract class MarksPage : BasePage<IMarksRepository, Mark, MarkView, MarkData>
     {

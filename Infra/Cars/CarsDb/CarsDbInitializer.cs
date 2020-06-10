@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Loppprojekt.Data.Cars;
+using Loppprojekt.Data.Cars.Generations;
+using Loppprojekt.Data.Cars.Marks;
+using Loppprojekt.Data.Cars.Models;
 
-namespace Loppprojekt.Infra.Cars
+namespace Loppprojekt.Infra.Cars.CarsDb
 {
     public static class CarsDbInitializer
     {

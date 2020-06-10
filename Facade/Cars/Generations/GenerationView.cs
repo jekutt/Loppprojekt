@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Loppprojekt.Facade.Common;
 
-namespace Loppprojekt.Facade.Cars
+namespace Loppprojekt.Facade.Cars.Generations
 {
     public sealed class GenerationView : DefinedView
     {

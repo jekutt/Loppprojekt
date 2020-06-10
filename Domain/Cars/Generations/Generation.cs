@@ -1,7 +1,7 @@
-﻿using Loppprojekt.Data.Cars;
+﻿using Loppprojekt.Data.Cars.Generations;
 using Loppprojekt.Domain.Common;
 
-namespace Loppprojekt.Domain.Cars
+namespace Loppprojekt.Domain.Cars.Generations
 {
     public sealed class Generation : Entity<GenerationData>
     {

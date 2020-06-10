@@ -1,8 +1,9 @@
-﻿using Loppprojekt.Data.Cars;
-using Loppprojekt.Domain.Cars;
+﻿using Loppprojekt.Data.Cars.Marks;
+using Loppprojekt.Domain.Cars.Marks;
+using Loppprojekt.Infra.Cars.CarsDb;
 using Loppprojekt.Infra.Common;
 
-namespace Loppprojekt.Infra.Cars
+namespace Loppprojekt.Infra.Cars.Marks
 {
     public class MarksRepository : UniqueEntityRepository<Mark, MarkData>, IMarksRepository
     {

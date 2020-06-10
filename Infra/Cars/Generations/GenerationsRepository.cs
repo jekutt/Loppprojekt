@@ -1,8 +1,9 @@
-﻿using Loppprojekt.Data.Cars;
-using Loppprojekt.Domain.Cars;
+﻿using Loppprojekt.Data.Cars.Generations;
+using Loppprojekt.Domain.Cars.Generations;
+using Loppprojekt.Infra.Cars.CarsDb;
 using Loppprojekt.Infra.Common;
 
-namespace Loppprojekt.Infra.Cars
+namespace Loppprojekt.Infra.Cars.Generations
 {
     public class GenerationsRepository : UniqueEntityRepository<Generation, GenerationData>, IGenerationsRepository
     {

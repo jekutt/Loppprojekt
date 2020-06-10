@@ -1,7 +1,7 @@
 ﻿using Loppprojekt.Aids.Methods;
-using Loppprojekt.Domain.Cars;
+using Loppprojekt.Domain.Cars.Models;
 
-namespace Loppprojekt.Facade.Cars
+namespace Loppprojekt.Facade.Cars.Models
 {
     public static class ModelViewFactory
     {

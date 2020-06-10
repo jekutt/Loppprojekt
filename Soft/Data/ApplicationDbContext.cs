@@ -1,4 +1,5 @@
 ﻿using Loppprojekt.Infra.Cars;
+using Loppprojekt.Infra.Cars.CarsDb;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,7 +1,7 @@
 ﻿using Loppprojekt.Aids.Methods;
-using Loppprojekt.Domain.Cars;
+using Loppprojekt.Domain.Cars.Marks;
 
-namespace Loppprojekt.Facade.Cars
+namespace Loppprojekt.Facade.Cars.Marks
 {
     public static class MarkViewFactory
     {

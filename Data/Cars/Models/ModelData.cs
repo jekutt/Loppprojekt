@@ -1,6 +1,6 @@
 ﻿using Loppprojekt.Data.Common;
 
-namespace Loppprojekt.Data.Cars
+namespace Loppprojekt.Data.Cars.Models
 {
     public sealed class ModelData : DefinedEntityData
     {

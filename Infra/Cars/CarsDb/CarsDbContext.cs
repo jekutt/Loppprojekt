@@ -1,7 +1,9 @@
-﻿using Loppprojekt.Data.Cars;
+﻿using Loppprojekt.Data.Cars.Generations;
+using Loppprojekt.Data.Cars.Marks;
+using Loppprojekt.Data.Cars.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Loppprojekt.Infra.Cars
+namespace Loppprojekt.Infra.Cars.CarsDb
 {
     public class CarsDbContext : DbContext
     {
